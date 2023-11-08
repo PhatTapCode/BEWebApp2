@@ -1,0 +1,66 @@
+﻿@model BEWebApp2.Models.OrderDetail
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OrderDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên SP
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProDetail.Product.ProName)
+        </dd>
+
+        <dt>
+            Tên NCC
+        </dt>
+
+        <dd>
+            @Html.DisplayNameFor(model => model.ProDetail.Supplier.SupName)
+        </dd>
+
+        <dt>
+            Màu sắc
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProDetail.Color.ColorName)
+        </dd>
+
+        <dt>
+            Số lượng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProDetail.ViewQuantity)
+        </dd>
+
+        <dt>
+            Đơn giá
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProDetail.Price)
+        </dd>
+
+        <dt>
+            Thành tiền
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.TotalValue)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OrderDetailID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
